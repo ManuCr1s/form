@@ -1,4 +1,4 @@
-<form class="shadow p-3 mb-5 bg-white rounded p-5">
+<form class="shadow p-3 mb-5 bg-white rounded p-5" id="idForm">
         <div class="form-row">
             <div class="form-group col-md-12 mt-3">
                 <h6>I. DATOS DEL SOLICITANTE</h6>
@@ -6,20 +6,37 @@
             <div class="form-group col-md-6">
                 <label for="tipo">TIPO DE DOCUMENTO</label>
                 <select class="form-control" id="type" name="type">
-                    <option value="">DNI</option>
-                    <option value="">CE</option>
-                    <option value="">PASAPORTE</option>
-                    <option value="">CA</option>
-                    <option value="">RUC</option>
-                    <option value="">PTP</option>
-                    <option value="">CR</option>
-                    <option value="">CI</option>
-                    <option value="">OTROS</option>
+                    <option value="9999" selected>SELECCIONE</option>
+                    <option value="1">DNI</option>
+                    <option value="2">CE</option>
+                    <option value="3">PASAPORTE</option>
+                    <option value="4">CA</option>
+                    <option value="5">RUC</option>
+                    <option value="6">PTP</option>
+                    <option value="7">CR</option>
+                    <option value="8">CI</option>
+                    <option value="9">OTROS</option>
                 </select>
             </div>
             <div class="form-group col-md-6">
             <label for="number">NUMERO DE DOCUMENTO</label>
-            <input type="text" class="form-control" id="number" name="number">
+            <input type="text" class="form-control" id="number" name="number" readonly>
+            </div>
+        </div>
+        <div class="form-row d-none" id="all">
+            <div class="form-group col-md-6">
+                <label for="tipo">NOMBRES</label>
+                <input type="text" id="nombre" name="nombre" class="form-control">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="number">APELLIDOS</label>
+                <input type="text" class="form-control" id="lastname" name="lastname">
+            </div>
+        </div>
+        <div class="form-row d-none" id="razon">
+            <div class="form-group col-md-12">
+                <label for="tipo">RAZON SOCIAL</label>
+                <input type="text" id="ruc" name="ruc" class="form-control">
             </div>
         </div>
         <div class="form-row">
@@ -70,29 +87,29 @@
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label for="addresd">URBANIZACION</label>
-                <input type="text" id="addresd" class="form-control">
+                <input type="text" id="addresd" name="addersd" class="form-control">
             </div>
             <div class="form-group col-md-4">
                 <label for="aveniu">AV/CALLE/JR/PSJ</label>
-                <input type="text" id="aveniu" class="form-control">  
+                <input type="text" id="aveniu" name="aveniu" class="form-control">  
             </div>
             <div class="form-group col-md-4">
                 <label for="dpta">N/DPTA/INT</label>
-                <input type="text" id="dpta" class="form-control">   
+                <input type="text" id="dpta"  name="dpta" class="form-control">   
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label for="email">CORREO</label>
-                <input type="email" id="email" class="form-control">
+                <input type="email" id="email" name="email" class="form-control">
             </div>
             <div class="form-group col-md-4">
                 <label for="phone">TELEFONO FIJO</label>
-                <input type="text" id="phone" class="form-control">  
+                <input type="text" id="phone"  name="phone" class="form-control">  
             </div>
             <div class="form-group col-md-4">
                 <label for="smartphone">CELULAR</label>
-                <input type="text" id="smartphone" class="form-control">   
+                <input type="text" id="smartphone" name="smartphone" class="form-control">   
             </div>
         </div>
         <div class="form-row">
@@ -108,13 +125,13 @@
             <div class="form-group col-md-12">
                 <label for="dependency">ENTIDAD DE LA CUAL SE REQUIERE INFORMACION</label>
                 <select name="dependency" id="dependency" class="form-control">
-                    <option value="0">SELECCIONE</option>
+                    <option value="9999">SELECCIONE</option>
                 </select>
             </div>
             <div class="form-group col-md-12">
-                <label for="dependency">ENTREGA DE LA INFORMACION</label>
-                <select name="dependency" id="dependency" class="form-control">
-                    <option value="0">SELECCIONE</option>
+                <label for="information">ENTREGA DE LA INFORMACION</label>
+                <select name="information" id="information" class="form-control">
+                    <option value="9999">SELECCIONE</option>
                     <option value="1">CD</option>
                     <option value="2">CORREO ELECTRONICO</option>
                     <option value="3">COPIA SIMPLE</option>
@@ -122,8 +139,8 @@
                 </select>
             </div>
             <div class="form-group col-md-12">
-                <label for="description">OBSERVACIONES</label>
-                <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>   
+                <label for="observation">OBSERVACIONES</label>
+                <textarea name="description" id="observation" cols="30" rows="10" class="form-control"></textarea>   
             </div>
         </div>
         <div class="form-row">

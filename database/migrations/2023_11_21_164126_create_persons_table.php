@@ -16,11 +16,13 @@ return new class extends Migration
         Schema::create('persons', function (Blueprint $table) {
             $table->id('id_person');
             $table->string('numero',20);
-            $table->string('email',20);
+            $table->string('email',30);
             $table->string('phone',20);
+            $table->string('name',200);
+            $table->string('lastname',200);
             $table->unsignedBigInteger('id_region');
             $table->unsignedBigInteger('id_province');
-            $table->unsignedBigInteger('id_province');  
+            $table->unsignedBigInteger('id_district');  
             $table->dateTime('created_at', $precision = 3);
             $table->dateTime('updated_at', $precision = 3);
         });

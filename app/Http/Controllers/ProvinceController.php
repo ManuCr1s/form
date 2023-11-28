@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Province;
 use App\Models\District;
+use App\Models\Office;
+
 class ProvinceController extends Controller
 {
     /**
@@ -43,11 +45,11 @@ class ProvinceController extends Controller
     }
     public function store_district(Request $request)
     {
-        $provincia = new District;
-        $provincia = District::select('id_district', 'nombre')
+        $district = new District;
+        $district = District::select('id_district', 'nombre')
         ->where('id_province', $request->input('valor'))
         ->get();
-        return json_encode($provincia);
+        return json_encode($district);
     }
 
     /**
@@ -56,9 +58,12 @@ class ProvinceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $office = new Office;
+        $office = Office::select('id_office','nombre')
+        ->get();
+        return json_encode($office);
     }
 
     /**

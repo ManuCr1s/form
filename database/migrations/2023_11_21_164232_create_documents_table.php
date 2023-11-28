@@ -14,8 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('documents', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id('id_document');
+            $table->string('url',255);
+            $table->string('description',255);
+            $table->dateTime('created_at', $precision = 3);
+            $table->dateTime('updated_at', $precision = 3);
         });
     }
 
